@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+
+<head>
+  <title>pengy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: start;
+      background-color: #124951cb;
+    }
+
+    #penguin {
+      position: fixed;
+      bottom: 0px;
+      width: 100%;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <center>
+    <h1>welcome to the ppengy website</h1>
+  </center>
+  <div class="link-container">
+    <p class="social-link">
+      <a href="https://osu.ppy.sh/users/8832233" target="_blank">
+        <img src="images/osu.png" style="width:42px;height:42px;" alt="osu!"> osu! profile
+      </a>
+    </p>
+
+    <p class="social-link">
+      <a href="https://x.com/ppengy_" target="_blank">
+        <img src="images/twitter.jpg" style="width:42px;height:42px;" alt="Twitter"> twitter
+      </a>
+    </p>
+
+    <p class="social-link">
+      <a href="https://bsky.app/profile/pengy.party" target="_blank">
+        <img src="images/bsky.jpg" style="width:42px;height:42px;" alt="Bluesky"> bluesky
+      </a>
+    </p>
+
+    <p class="social-link">
+      <a href="https://www.tiktok.com/@ppengy_/" target="_blank">
+        <img src="images/tiktok.png" style="width:42px;height:42px;" alt="TikTok"> tiktok
+      </a>
+    </p>
+  </div>
+
+  <div id="penguin" onclick="play()">
+    <p style="font-size: 500%;">🐧</p>
+
+  </div>
+
+  <script>
+    function play() {
+      var audio = document.getElementById(getRandomInt(3));
+      audio.play();
+    }
+    function getRandomInt(max) {
+    return Math.floor(Math.random() * max).toString();
+}
+  </script>
+
+  <audio id="0" src="audios/bruh.mp3"></audio>
+  <audio id="1" src="audios/wow.mp3"></audio>
+  <audio id="2" src="audios/fart.mp3"></audio>
+
+
+</body>
+
+</html>
