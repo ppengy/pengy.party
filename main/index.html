@@ -58,12 +58,14 @@
 
   <script>
     function play() {
-      var audio = document.getElementById(getRandomInt(3));
+      var audioID = getRandomInt(3);
+      var audio = document.getElementById(audioID);
       audio.play();
+      penguin.append('🐧');
     }
     function getRandomInt(max) {
-    return Math.floor(Math.random() * max).toString();
-}
+      return Math.floor(Math.random() * max).toString();
+    }
   </script>
 
   <audio id="0" src="audios/bruh.mp3"></audio>
