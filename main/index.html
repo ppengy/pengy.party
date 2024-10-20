@@ -1,65 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<html>
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap" rel="stylesheet">
   <title>pengy</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: start;
-      background-color: #124951cb;
-    }
-
-    #penguin {
-      position: fixed;
-      bottom: 0px;
-      width: 100%;
-      text-align: center;
-    }
-  </style>
 </head>
 
 <body>
-  <center>
-    <h1>welcome to the ppengy website</h1>
-  </center>
+  <h1>welcome to the ppengy website</h1>
+
   <div class="link-container">
-    <p class="social-link">
+    <div class="social-link">
       <a href="https://osu.ppy.sh/users/8832233" target="_blank">
-        <img src="images/osu.png" style="width:42px;height:42px;" alt="osu!"> osu! profile
+        <img src="images/osu.png" alt="osu!">
+        <span>osu!</span>
       </a>
-    </p>
+    </div>
 
-    <p class="social-link">
+    <div class="social-link">
       <a href="https://x.com/ppengy_" target="_blank">
-        <img src="images/twitter.jpg" style="width:42px;height:42px;" alt="Twitter"> twitter
+        <img src="images/twitter.jpg" alt="Twitter">
+        <span>Twitter</span>
       </a>
-    </p>
+    </div>
 
-    <p class="social-link">
+    <div class="social-link">
       <a href="https://bsky.app/profile/pengy.party" target="_blank">
-        <img src="images/bsky.jpg" style="width:42px;height:42px;" alt="Bluesky"> bluesky
+        <img src="images/bsky.jpg" alt="Bluesky">
+        <span>Bluesky</span>
       </a>
-    </p>
+    </div>
 
-    <p class="social-link">
+    <div class="social-link">
       <a href="https://www.tiktok.com/@ppengy_/" target="_blank">
-        <img src="images/tiktok.png" style="width:42px;height:42px;" alt="TikTok"> tiktok
+        <img src="images/tiktok.png" alt="TikTok">
+        <span>TikTok</span>
       </a>
-    </p>
-    <p class="social-link">
+    </div>
+
+    <div class="social-link">
       <a href="https://github.com/ppengy" target="_blank">
-        <img src="images/github.png" style="width:42px;height:42px;" alt="TikTok"> github
+        <img src="images/github.png" alt="Github">
+        <span>Github</span>
       </a>
-    </p>
+    </div>
+
+    <div class="social-link">
+      <a href="https://discord.gg/c4rCfDG2KG" target="_blank">
+        <img src="images/discord.png" alt="Discord">
+        <span>Discord</span>
+      </a>
+    </div>
   </div>
 
 
-  <div id="penguin" onclick="play()">
-    <p style="font-size: 500%;">🐧</p>
 
+  <div id="penguin" onclick="play()">
+    <p>🐧</p>
   </div>
 
   <script>
@@ -69,6 +71,7 @@
       audio.play();
       penguin.append('🐧');
     }
+
     function getRandomInt(max) {
       return Math.floor(Math.random() * max).toString();
     }
@@ -77,8 +80,6 @@
   <audio id="0" src="audios/bruh.mp3"></audio>
   <audio id="1" src="audios/wow.mp3"></audio>
   <audio id="2" src="audios/fart.mp3"></audio>
-
-
 </body>
 
 </html>

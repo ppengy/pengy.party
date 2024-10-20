@@ -1,0 +1,104 @@
+.nunito-font {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+/* rainbow text credit to https://stackoverflow.com/a/71909116*/
+h1 {
+    text-align: center;
+    font-size: 32px;
+    font-family: "Nunito", sans-serif;
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    animation: rainbow-animation 140s linear infinite;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 5px;
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
+    animation: rainbow-animation 140s linear infinite;
+}
+
+@keyframes rainbow-animation {
+    to {
+        background-position: 4500vh;
+    }
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    background-color: #124951cb;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.5s ease;
+    animation: fadein 3s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.link-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 200px;
+    row-gap: 100px;
+    padding-top: 40px;
+    justify-content: center;
+}
+
+.link-container a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link-container img {
+    display: block;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    transition: transform 0.5s ease;
+}
+
+.social-link a:hover img {
+    transform: translateY(-10px) scale(1.25);
+}
+
+.link-container a span {
+    color: black;
+    text-decoration: none;
+    cursor: default;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#penguin {
+    font-size: 200%;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    cursor: pointer;
+}
