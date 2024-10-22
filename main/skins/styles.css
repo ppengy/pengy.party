@@ -57,6 +57,11 @@ body {
     }
 }
 
+.description {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
 
 .skinbox {
     display: flex;
@@ -82,11 +87,10 @@ body {
     margin: 10px;
     min-width: 180px;
     max-width: 380px;
-    padding-top: 30px;
     height: auto;
     border-radius: 12px;
-    filter: drop-shadow(20px 20px 10px rgb(34, 34, 34));
-    transition: 0.5s;
+    filter: blur() drop-shadow(20px 20px 10px rgb(34, 34, 34));
+    transition: all 0.5s ease;
     position: relative;
     text-align: center;
     color: white;
@@ -99,6 +103,7 @@ body {
 }
 
 .overlay-text {
+    pointer-events: none;
     z-index: 1;
     position: absolute;
     top: 50%;
@@ -116,6 +121,7 @@ body {
 
 .skin a {
     position: relative;
+    padding: auto;
 }
 
 .skin a:hover .overlay-text {
@@ -124,9 +130,13 @@ body {
 }
 
 .skin span a:not(.download-link) {
-    background-color: rgb(126, 89, 89);
+    background: rgba(255, 255, 255, 0.17);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.4px);
+    -webkit-backdrop-filter: blur(4.4px);
+    border: 2px solid #124951cb;
     display: block;
-    border-radius: 12px;
     width: 200px;
     margin: 12px 0;
     text-align: center;
@@ -134,10 +144,11 @@ body {
     color: black;
     font-weight: bold;
     cursor: default;
+
 }
 
 .download-link {
-    background-color: #1c1f2b;
+    background: #1c1f2b;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -150,7 +161,7 @@ body {
     cursor: pointer;
     font-weight: bold;
     position: relative;
-    transition: opacity 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .download-link::after,
@@ -167,9 +178,14 @@ body {
     padding: 2px;
     border-radius: 12px;
     opacity: 0;
+    filter: blur(2px);
     transition: opacity 0.8s ease;
     animation: rainbow-animation 300s linear infinite;
     animation-play-state: paused;
+}
+
+.download-link:hover {
+    background: #2b3041;
 }
 
 .download-link:hover::after,
