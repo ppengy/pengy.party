@@ -98,7 +98,6 @@ body {
 
 }
 
-/* Overlay text */
 .overlay-text {
     z-index: 1;
     position: absolute;
@@ -117,10 +116,8 @@ body {
 
 .skin a {
     position: relative;
-    /* Ensure the overlay is positioned relative to this */
 }
 
-/* Show the text when hovering over the image */
 .skin a:hover .overlay-text {
     visibility: visible;
     opacity: 1;
