@@ -6,9 +6,7 @@
 
 /* Rainbow text (credit to https://stackoverflow.com/a/71909116) */
 h1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: inline-block;
     text-align: center;
     font-size: min(10vh, 32px);
     font-family: "Nunito", sans-serif;
@@ -17,16 +15,20 @@ h1 {
     -webkit-text-fill-color: transparent;
     position: relative;
     animation: rainbow-animation 140s linear infinite;
-
+    margin: 0;
+    margin-bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 h1::after {
     content: '';
     position: absolute;
-    left: 0;
     right: 0;
     bottom: -5px;
-    height: 5px;
+    height: 8px;
+    border-radius: 30px;
+    width: 100%;
     background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
     animation: rainbow-animation 140s linear infinite;
 }
@@ -60,7 +62,8 @@ body {
 .description {
     display: flex;
     justify-content: center;
-    margin-bottom: 1em;
+    margin: 1em;
+    font-weight: bold;
 }
 
 .skinbox {
@@ -68,8 +71,14 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding-inline: 5%;
+    margin: 1% 100px 0;
     height: 100%;
+    background: rgba(255, 255, 255, 0.34);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 1);
 }
 
 .skin {

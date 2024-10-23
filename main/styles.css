@@ -6,6 +6,7 @@
 
 /* Rainbow text (credit to https://stackoverflow.com/a/71909116) */
 h1 {
+    display: inline-block;
     text-align: center;
     font-size: min(10vh, 32px);
     font-family: "Nunito", sans-serif;
@@ -14,23 +15,21 @@ h1 {
     -webkit-text-fill-color: transparent;
     position: relative;
     animation: rainbow-animation 140s linear infinite;
+    margin: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 h1::after {
     content: '';
     position: absolute;
-    left: 0;
     right: 0;
     bottom: -5px;
-    height: 5px;
+    height: 8px;
+    border-radius: 30px;
+    width: 100%;
     background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
     animation: rainbow-animation 140s linear infinite;
-}
-
-@keyframes rainbow-animation {
-    to {
-        background-position: 4500vh;
-    }
 }
 
 body {
@@ -38,7 +37,6 @@ body {
     background-color: #124951cb;
     height: 100%;
     margin: 0;
-    display: flex;
     flex-direction: column;
     align-items: center;
     transition: background-color 0.5s ease;
@@ -46,51 +44,124 @@ body {
 }
 
 @keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .link-container {
-    display: grid;
-    max-width: 600px;
-    min-width: 375px;
-    width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    column-gap: min(5vh, 80px);
-    row-gap: 10vh;
-    padding-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin: 3% 100px 0;
+    height: 100%;
+    padding: 1dvh 10dvw;
+    background: rgba(255, 255, 255, 0.34);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    padding: 3em;
+    align-items: center;
     justify-content: center;
 }
 
-.link-container a {
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.link-container img {
+.social-link img {
+    mix-blend-mode: multiply;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 5px 5px 27px #344041, -5px -5px 27px #d0feff;
+    cursor: pointer;
+    margin: 0 auto 1dvw;
     display: block;
-    margin: 0 auto;
-    width: max(70px, min(20vh, 10vw));
-    max-width: 100px;
+    max-width: 90px;
     transition: transform 0.5s ease;
 }
 
-.social-link a:hover img {
-    transform: translateY(-15px) scale(1.25);
+.social-link img:hover {
+    transform: translateY(-10px) scale(1.15);
 }
 
-.link-container a span {
-    color: black;
-    cursor: default;
-    font-size: 20px;
-    text-align: center;
+a {
+    text-decoration: none;
+}
+
+.platform-name {
+    background: #1c1f2b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    width: 10dvw;
+    min-width: 50px;
+    margin: 10px auto 0;
+    height: 40px;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
     font-weight: bold;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.platform-name::after,
+.platform-name::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    padding: 2px;
+    border-radius: 12px;
+    opacity: 0;
+    filter: blur(2px);
+    transition: opacity 0.8s ease-in-out;
+    animation: rainbow-animation 300s linear infinite;
+    animation-play-state: paused;
+}
+
+.platform-name:hover {
+    background: #2b3041;
+}
+
+.platform-name:hover::after,
+.platform-name:hover::before {
+    animation-play-state: running;
+    opacity: 1;
+}
+
+@keyframes rainbow-animation {
+    to { background-position: 4500vh; }
+}
+
+@media screen and (max-width: 500px) {
+    .link-container {
+        margin: 3em 0;
+        padding: 0;
+    }
+
+    .social-link {
+        padding: 3dvh 2dvw;
+    }
+
+    .social-link img {
+        width: 4em;
+    }
+
+    .platform-name {
+        width: 80px;
+    }
 }
 
 #penguin {
@@ -102,4 +173,6 @@ body {
     bottom: 0;
     text-align: center;
     cursor: pointer;
+    left: 50%;
+    transform: translateX(-50%);
 }

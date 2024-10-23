@@ -2,98 +2,92 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap" rel="stylesheet">
-  <title>pengy</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap" rel="stylesheet">
+    <title>pengy</title>
 </head>
 
 <body>
-  <h1>welcome to the ppengy website</h1>
+    <h1>welcome to the ppengy website</h1>
 
-  <div class="link-container">
-    <div class="social-link">
-      <a href="https://osu.ppy.sh/users/8832233" target="_blank">
-        <img src="images/osu.png" alt="osu!">
-        <span>osu!</span>
-      </a>
-    </div>
-    <div class="social-link">
-      <a href="skins" target="_blank">
-        <img src="images/skins.png" alt="skins">
-        <span>Skins</span>
-      </a>
-    </div>
 
-    <div class="social-link">
-      <a href="https://x.com/ppengy_" target="_blank">
-        <img src="images/twitter.jpg" alt="Twitter">
-        <span>Twitter</span>
-      </a>
-    </div>
+    <div class="link-container">
+        <div class="social-link">
+            <a href="https://osu.ppy.sh/users/8832233" target="_blank">
+                <img src="images/osu.png" alt="osu!">
+                <span class="platform-name">osu!</span>
+            </a>
+        </div>
+        <div class="social-link">
+            <a href="skins" target="_blank">
+                <img src="images/skins.png" alt="skins">
+                <span class="platform-name">Skins</span>
+            </a>
+        </div>
 
-    <div class="social-link">
-      <a href="https://bsky.app/profile/pengy.party" target="_blank">
-        <img src="images/bsky.jpg" alt="Bluesky">
-        <span>Bluesky</span>
-      </a>
-    </div>
+        <div class="social-link">
+            <a href="https://x.com/ppengy_" target="_blank">
+                <img src="images/twitter.jpg" alt="Twitter">
+                <span class="platform-name">Twitter</span>
+            </a>
+        </div>
 
-    <div class="social-link">
-      <a href="https://www.tiktok.com/@ppengy_/" target="_blank">
-        <img src="images/tiktok.png" alt="TikTok">
-        <span>TikTok</span>
-      </a>
-    </div>
+        <div class="social-link">
+            <a href="https://bsky.app/profile/pengy.party" target="_blank">
+                <img src="images/bsky.jpg" alt="Bluesky">
+                <span class="platform-name">Bluesky</span>
+            </a>
+        </div>
 
-    <div class="social-link">
-      <a href="https://github.com/ppengy" target="_blank">
-        <img src="images/github.png" alt="Github">
-        <span>Github</span>
-      </a>
-    </div>
-    <!-- blank class for formatting -->
-    <div class="social-link">
-      <a href="" target="_blank">
-        <img src="" alt="">
-        <span></span>
-      </a>
-    </div>
-    <div class="social-link">
-      <a href="https://discord.gg/c4rCfDG2KG" target="_blank">
-        <img src="images/discord.png" alt="Discord">
-        <span>Discord Server</span>
-      </a>
+        <div class="social-link">
+            <a href="https://www.tiktok.com/@ppengy_/" target="_blank">
+                <img src="images/tiktok.png" alt="TikTok">
+                <span class="platform-name">TikTok</span>
+            </a>
+        </div>
+
+        <div class="social-link">
+            <a href="https://github.com/ppengy" target="_blank">
+                <img src="images/github.png" alt="Github">
+                <span class="platform-name">Github</span>
+            </a>
+        </div>
+        <div class="social-link">
+            <a href="https://discord.gg/c4rCfDG2KG" target="_blank">
+                <img src="images/discord.png" alt="Discord">
+                <span class="platform-name">Server</span>
+            </a>
+        </div>
+
+
     </div>
 
 
-  </div>
 
+    <div id="penguin" onclick="play()">
+        <p>🐧</p>
+    </div>
 
+    <script>
+        function play() {
+            var audioID = getRandomInt(3);
+            var audio = document.getElementById(audioID);
+            audio.play();
+            penguin.append('🐧');
+        }
 
-  <div id="penguin" onclick="play()">
-    <p>🐧</p>
-  </div>
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max).toString();
+        }
+    </script>
 
-  <script>
-    function play() {
-      var audioID = getRandomInt(3);
-      var audio = document.getElementById(audioID);
-      audio.play();
-      penguin.append('🐧');
-    }
-
-    function getRandomInt(max) {
-      return Math.floor(Math.random() * max).toString();
-    }
-  </script>
-
-  <audio id="0" src="audios/bruh.mp3"></audio>
-  <audio id="1" src="audios/wow.mp3"></audio>
-  <audio id="2" src="audios/fart.mp3"></audio>
+    <audio id="0" src="audios/bruh.mp3"></audio>
+    <audio id="1" src="audios/wow.mp3"></audio>
+    <audio id="2" src="audios/fart.mp3"></audio>
 </body>
 
 </html>
