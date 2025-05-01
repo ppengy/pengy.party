@@ -29,7 +29,7 @@
 
   <!-- Login Button -->
   <div id="login-block" style="display: none;">
-    <p><a href="/login"><button>Log in with Discord</button></a></p>
+    <p><a href="https://api.pengy.party/login"><button>Log in with Discord</button></a></p>
   </div>
 
   <!-- Upload UI -->
@@ -43,7 +43,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const cookie = document.cookie;
-      const discordMatch = cookie.match(/(^|;\\s*)discord_id=([^;]+)/);
+      const discordMatch = cookie.match(/(^|;\s*)discord_id=([^;]+)/);
       const hasDiscordId = discordMatch !== null;
 
       console.log("Cookie string:", cookie);
@@ -75,7 +75,7 @@
         formData.append("file", file);
 
         try {
-          const res = await fetch("/upload", {
+          const res = await fetch("https://api.pengy.party/upload", {
             method: "POST",
             body: formData,
             credentials: "include" // ensures cookies like discord_id are sent
@@ -83,7 +83,7 @@
 
           const text = await res.text();
           if (res.ok) {
-            status.innerHTML = `✅ ${text}<br><a href="/files/${encodeURIComponent(file.name)}" target="_blank">View file</a>`;
+            status.innerHTML = `✅ ${text}<br><a href="https://api.pengy.party/files/${encodeURIComponent(file.name)}" target="_blank">View file</a>`;
           } else {
             status.textContent = `❌ Error: ${text}`;
           }
