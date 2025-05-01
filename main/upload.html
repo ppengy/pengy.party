@@ -28,11 +28,11 @@
   <h1>🐧 Upload to pengy.party</h1>
 
   <!-- Login Button -->
-  <div id="login-block">
+  <div id="login-block" style="display: none;">
     <p><a href="/login"><button>Log in with Discord</button></a></p>
   </div>
 
-  <!-- Upload Form (pure JS) -->
+  <!-- Upload UI -->
   <div id="upload-block" style="display: none;">
     <input type="file" id="fileInput" required />
     <br />
@@ -42,17 +42,27 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const hasDiscordId = document.cookie.includes("discord_id=");
+      const cookie = document.cookie;
+      const discordMatch = cookie.match(/(^|;\\s*)discord_id=([^;]+)/);
+      const hasDiscordId = discordMatch !== null;
+
+      console.log("Cookie string:", cookie);
+      console.log("Has discord_id cookie:", hasDiscordId);
+
       const loginBlock = document.getElementById("login-block");
       const uploadBlock = document.getElementById("upload-block");
-      const fileInput = document.getElementById("fileInput");
-      const uploadButton = document.getElementById("uploadButton");
-      const status = document.getElementById("status");
 
       if (hasDiscordId) {
         loginBlock.style.display = "none";
         uploadBlock.style.display = "block";
+      } else {
+        loginBlock.style.display = "block";
+        uploadBlock.style.display = "none";
       }
+
+      const fileInput = document.getElementById("fileInput");
+      const uploadButton = document.getElementById("uploadButton");
+      const status = document.getElementById("status");
 
       uploadButton.addEventListener("click", async () => {
         const file = fileInput.files[0];
@@ -68,7 +78,7 @@
           const res = await fetch("/upload", {
             method: "POST",
             body: formData,
-            credentials: "include" // send the discord_id cookie
+            credentials: "include" // ensures cookies like discord_id are sent
           });
 
           const text = await res.text();
