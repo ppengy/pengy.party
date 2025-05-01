@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap" rel="stylesheet">
+        <title>pengy</title>
+    </head>
+<body>
+  <h1>Upload to pengy.party</h1>
+
+  <div id="login-block">
+    <p><a href="/login"><button>Log in with Discord</button></a></p>
+  </div>
+
+  <div id="upload-block" style="display: none;">
+    <form id="uploadForm" enctype="multipart/form-data" method="POST">
+      <input type="file" name="file" required />
+      <br />
+      <button type="submit">Upload</button>
+    </form>
+    <p id="status"></p>
+  </div>
+
+  <script>
+    // Detect if the user is logged in via cookie
+    const hasDiscordId = document.cookie.includes("discord_id=");
+
+    const loginBlock = document.getElementById("login-block");
+    const uploadBlock = document.getElementById("upload-block");
+
+    if (hasDiscordId) {
+      loginBlock.style.display = "none";
+      uploadBlock.style.display = "block";
+    }
+
+    // Handle upload form
+    document.getElementById("uploadForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const status = document.getElementById("status");
+
+      try {
+        const res = await fetch("/upload", {
+          method: "POST",
+          body: formData
+        });
+
+        const text = await res.text();
+        status.textContent = res.ok ? `✅ ${text}` : `❌ ${text}`;
+      } catch (err) {
+        status.textContent = `❌ Upload failed: ${err.message}`;
+      }
+    });
+  </script>
+</body>
+</html>
