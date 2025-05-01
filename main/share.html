@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Upload to pengy.party</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      text-align: center;
+    }
+    #status {
+      margin-top: 1em;
+      font-weight: bold;
+    }
+    a {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1>🐧 Upload to pengy.party</h1>
+
+  <!-- Login Button -->
+  <div id="login-block" style="display: none;">
+    <p><a href="/login"><button>Log in with Discord</button></a></p>
+  </div>
+
+  <!-- Upload UI -->
+  <div id="upload-block" style="display: none;">
+    <input type="file" id="fileInput" required />
+    <br />
+    <button id="uploadButton">Upload</button>
+    <p id="status"></p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cookie = document.cookie;
+      const discordMatch = cookie.match(/(^|;\\s*)discord_id=([^;]+)/);
+      const hasDiscordId = discordMatch !== null;
+
+      console.log("Cookie string:", cookie);
+      console.log("Has discord_id cookie:", hasDiscordId);
+
+      const loginBlock = document.getElementById("login-block");
+      const uploadBlock = document.getElementById("upload-block");
+
+      if (hasDiscordId) {
+        loginBlock.style.display = "none";
+        uploadBlock.style.display = "block";
+      } else {
+        loginBlock.style.display = "block";
+        uploadBlock.style.display = "none";
+      }
+
+      const fileInput = document.getElementById("fileInput");
+      const uploadButton = document.getElementById("uploadButton");
+      const status = document.getElementById("status");
+
+      uploadButton.addEventListener("click", async () => {
+        const file = fileInput.files[0];
+        if (!file) {
+          status.textContent = "❌ Please select a file first.";
+          return;
+        }
+
+        const formData = new FormData();
+        formData.append("file", file);
+
+        try {
+          const res = await fetch("/upload", {
+            method: "POST",
+            body: formData,
+            credentials: "include" // ensures cookies like discord_id are sent
+          });
+
+          const text = await res.text();
+          if (res.ok) {
+            status.innerHTML = `✅ ${text}<br><a href="/files/${encodeURIComponent(file.name)}" target="_blank">View file</a>`;
+          } else {
+            status.textContent = `❌ Error: ${text}`;
+          }
+        } catch (err) {
+          status.textContent = `❌ Upload failed: ${err.message}`;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
