@@ -83,7 +83,7 @@
 
           const text = await res.text();
           if (res.ok) {
-            status.innerHTML = `✅ ${text}<br><a href="https://api.pengy.party/files/${encodeURIComponent(file.name)}" target="_blank">View file</a>`;
+            status.innerHTML = `✅ File uploaded.<br><a href="https://api.pengy.party/files/${encodeURIComponent(text)}" target="_blank">View file</a>`;
           } else {
             status.textContent = `❌ Error: ${text}`;
           }
