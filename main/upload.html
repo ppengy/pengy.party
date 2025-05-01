@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Upload to pengy.party</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="styles.css">
@@ -15,12 +15,6 @@
       margin: 50px auto;
       text-align: center;
     }
-    form {
-      margin-top: 20px;
-    }
-    input[type="file"] {
-      margin-bottom: 10px;
-    }
     #status {
       margin-top: 1em;
       font-weight: bold;
@@ -31,49 +25,50 @@
   </style>
 </head>
 <body>
-  <h1>Upload to pengy.party</h1>
+  <h1>🐧 Upload to pengy.party</h1>
 
   <!-- Login Button -->
   <div id="login-block">
     <p><a href="/login"><button>Log in with Discord</button></a></p>
   </div>
 
-  <!-- Upload Form -->
+  <!-- Upload Form (pure JS) -->
   <div id="upload-block" style="display: none;">
-    <form id="uploadForm" action="/upload" enctype="multipart/form-data" method="POST">
-      <input type="file" name="file" required />
-      <br />
-      <button type="submit">Upload</button>
-    </form>
+    <input type="file" id="fileInput" required />
+    <br />
+    <button id="uploadButton">Upload</button>
     <p id="status"></p>
   </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // Show upload form only if logged in
       const hasDiscordId = document.cookie.includes("discord_id=");
       const loginBlock = document.getElementById("login-block");
       const uploadBlock = document.getElementById("upload-block");
+      const fileInput = document.getElementById("fileInput");
+      const uploadButton = document.getElementById("uploadButton");
+      const status = document.getElementById("status");
 
       if (hasDiscordId) {
         loginBlock.style.display = "none";
         uploadBlock.style.display = "block";
       }
 
-      // Handle file upload
-      const form = document.getElementById('uploadForm');
-      form.addEventListener('submit', async function (e) {
-        e.preventDefault(); // ⛔ Prevent default form submission
+      uploadButton.addEventListener("click", async () => {
+        const file = fileInput.files[0];
+        if (!file) {
+          status.textContent = "❌ Please select a file first.";
+          return;
+        }
 
-        const formData = new FormData(this);
-        const status = document.getElementById('status');
-        const file = formData.get("file");
+        const formData = new FormData();
+        formData.append("file", file);
 
         try {
           const res = await fetch("/upload", {
             method: "POST",
             body: formData,
-            credentials: "include" // ✅ send discord_id cookie
+            credentials: "include" // send the discord_id cookie
           });
 
           const text = await res.text();
