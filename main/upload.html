@@ -12,12 +12,14 @@
 <body>
   <h1>Upload to pengy.party</h1>
 
+  <!-- Login Button -->
   <div id="login-block">
     <p><a href="/login"><button>Log in with Discord</button></a></p>
   </div>
 
+  <!-- Upload Form -->
   <div id="upload-block" style="display: none;">
-    <form id="uploadForm" enctype="multipart/form-data" method="POST">
+    <form id="uploadForm" action="/upload" enctype="multipart/form-data" method="POST">
       <input type="file" name="file" required />
       <br />
       <button type="submit">Upload</button>
@@ -26,9 +28,8 @@
   </div>
 
   <script>
-    // Detect if the user is logged in via cookie
+    // Show upload form only if logged in
     const hasDiscordId = document.cookie.includes("discord_id=");
-
     const loginBlock = document.getElementById("login-block");
     const uploadBlock = document.getElementById("upload-block");
 
@@ -37,11 +38,12 @@
       uploadBlock.style.display = "block";
     }
 
-    // Handle upload form
-    document.getElementById("uploadForm").addEventListener("submit", async function (e) {
+    // Handle file upload
+    document.getElementById('uploadForm').addEventListener('submit', async function (e) {
       e.preventDefault();
       const formData = new FormData(this);
-      const status = document.getElementById("status");
+      const status = document.getElementById('status');
+      const file = formData.get("file");
 
       try {
         const res = await fetch("/upload", {
@@ -50,7 +52,11 @@
         });
 
         const text = await res.text();
-        status.textContent = res.ok ? `✅ ${text}` : `❌ ${text}`;
+        if (res.ok) {
+          status.innerHTML = `✅ ${text}<br><a href="/files/${encodeURIComponent(file.name)}" target="_blank">View file</a>`;
+        } else {
+          status.textContent = `❌ Error: ${text}`;
+        }
       } catch (err) {
         status.textContent = `❌ Upload failed: ${err.message}`;
       }
