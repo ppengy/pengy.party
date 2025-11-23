@@ -116,6 +116,27 @@
             color: red;
             transition: color 0.3s;
         }
+
+        .footnote {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            color: #888;
+            font-size: 0.85rem;
+            opacity: 0.8;
+            //pointer-events: none; /* optional: doesn't block clicks */
+        }
+
+        .footnote a:link,
+        .footnote a:visited {
+            color: #888;
+            text-decoration: none;
+        }
+
+        .footnote a:hover {
+            color: red;
+            transition: color 0.3s;
+        }
     </style>
 </head>
 
@@ -126,6 +147,8 @@
     <div class="skin-grid" id="skin-grid"></div>
 
     <footer><a href="/913">Main Page</a></footer>
+    <div class="footnote">made by <a href="https://pengy.party/">ppengy</a>, inspired by <a
+            href="https://ego.baby">ego.baby</a></div>
 
     <script>
         // Skin data with multiple images
@@ -147,6 +170,15 @@
                     "img/cyberpastel/2.jpg", "img/cyberpastel/3.jpg"
                 ],
                 download: "https://www.mediafire.com/file/htifino3lq7k8dn/-_cyber_pastel_-.osk/file"
+            },
+            {
+                name: "Urabe",
+                author: "Dfking",
+                images: [
+                    "img/urabe/1.jpg",
+                    "img/urabe/2.jpg", "img/urabe/3.jpg"
+                ],
+                download: "https://www.mediafire.com/file/ytn56ugxvm18c7x/Urabe.osk/file"
             },
             {
                 name: "beatiful ah birds",
@@ -242,4 +274,4 @@
 
 </body>
 
-</html>
+</html>.
