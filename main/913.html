@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>913</title>
+    <style>
+        body {
+            font-family: Roboto, "Helvetica Neue", Arial;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 95vh;
+            background-color: black;
+            color: whitesmoke;
+        }
+
+        a.clan:link,
+        a.clan:visited {
+            color: whitesmoke;
+            text-decoration: none;
+        }
+
+        a.clan:hover {
+            color: red;
+        }
+
+        .bbbox {
+
+            padding: 10px 15px;
+            margin-top: 1rem;
+            cursor: pointer;
+            user-select: none;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .bbbox .arrow {
+            display: inline-block;
+            margin-right: 5px;
+            transition: transform 0.3s;
+        }
+
+        .bbbox .names {
+            display: none;
+            margin-top: 0.5rem;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        .bbbox.active .names {
+            display: block;
+        }
+
+        .bbbox.active .arrow {
+            transform: rotate(90deg);
+        }
+
+        .bbbox .names a:link,
+        .bbbox .names a:visited {
+            color: whitesmoke;
+            text-decoration: none;
+        }
+
+        .bbbox .names a:hover {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <a class="clan" href="https://osu.ppy.sh/teams/32869" target="_blank">
+        <h1>913</h1>
+    </a>
+    <h3>˚₊‧꒰ა ♡ ໒꒱ ‧₊˚</h3>
+    <p>The world is full of unfortunate people…</p>
+    <p id="name-flasher"></p>
+
+    <div class="bbbox" onclick="this.classList.toggle('active')">
+        <span class="arrow">></span>
+        <div class="names" id="names-container"></div>
+    </div>
+
+    <script>
+        // List of names and links
+        const names = [
+            { name: "alfie", link: "https://osu.ppy.sh/users/19883639" },
+            { name: "atlas", link: "https://osu.ppy.sh/users/9074780" },
+            { name: "berry", link: "https://osu.ppy.sh/users/14222865" },
+            { name: "chuggle", link: "https://osu.ppy.sh/users/31117245" },
+            { name: "dfking", link: "https://osu.ppy.sh/users/29424286" },
+            { name: "east", link: "https://osu.ppy.sh/users/13169726" },
+            { name: "eila", link: "https://osu.ppy.sh/users/BANNED" },
+            { name: "enthrew", link: "https://osu.ppy.sh/users/19540896" },
+            { name: "fear", link: "https://osu.ppy.sh/users/13315922" },
+            { name: "gary", link: "https://example.com/gary" },
+            { name: "hinder", link: "https://example.com/hinder" },
+            { name: "lastnoobwarrior", link: "https://osu.ppy.sh/users/17748214" },
+            { name: "lexy", link: "https://osu.ppy.sh/users/20240988" },
+            { name: "lu", link: "https://osu.ppy.sh/users/BANNED" },
+            { name: "nase", link: "https://osu.ppy.sh/users/15428284" },
+            { name: "pengy", link: "https://osu.ppy.sh/users/8832233" },
+            { name: "ricky", link: "https://osu.ppy.sh/users/17649390" },
+            { name: "sylriu", link: "https://osu.ppy.sh/users/12637617" }
+        ];
+
+        // Flashing name element
+        const nameFlasherDomEl = document.getElementById("name-flasher");
+        let index = 0;
+
+        function loop() {
+            const item = names[index].name;
+            nameFlasherDomEl.innerText = item;
+            index = (index + 1) % names.length;
+        }
+
+        setInterval(loop, 550);
+
+        // Populate dropdown links dynamically
+        const namesContainer = document.getElementById("names-container");
+        names.forEach(obj => {
+            const a = document.createElement("a");
+            a.href = obj.link;
+            a.target = "_blank";
+            a.innerText = obj.name;
+            namesContainer.appendChild(a);
+            namesContainer.appendChild(document.createElement("br"));
+        });
+    </script>
+</body>
+
+</html>
