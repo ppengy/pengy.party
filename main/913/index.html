@@ -13,6 +13,9 @@
             margin: 0;
             background-color: black;
             color: whitesmoke;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         a:link,
@@ -35,7 +38,7 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            box-shadow: inset 0 2px 16px 12px rgba(0,0,0,0.55);
+            box-shadow: inset 0 2px 16px 12px rgba(0, 0, 0, 0.55);
 
         }
 
@@ -102,6 +105,26 @@
             max-height: 1000px;
         }
 
+        .footnote {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            color: #888;
+            font-size: 0.85rem;
+            opacity: 0.8;
+            //pointer-events: none; /* optional: doesn't block clicks */
+        }
+
+        .footnote a:link,
+        .footnote a:visited {
+            color: #888;
+            text-decoration: none;
+        }
+
+        .footnote a:hover {
+            color: red;
+            transition: color 0.3s;
+        }
     </style>
 </head>
 
@@ -116,18 +139,21 @@
 
     <!-- Subtitle -->
     <p style="font-size: 2rem; text-align: center;">
-        ˚₊‧꒰ა ♡ <span class="flipped">ა</span>꒱‧₊˚
+        <a href="skins">
+            ˚₊‧꒰ა ♡ <span class="flipped">ა</span>꒱‧₊˚
+        </a>
     </p>
     <p>The world is full of unfortunate people…</p>
 
     <!-- Flashing name -->
     <p id="name-flasher">:3&nbsp;</p>
-
     <!-- BBCode-style dropdown box -->
     <div class="box" onclick="this.classList.toggle('active')">
         <span class="arrow">▸</span>
         <div class="names" id="names-container"></div>
     </div>
+    <div class="footnote">made by <a href="https://pengy.party/">ppengy</a>, inspired by <a
+            href="https://ego.baby">ego.baby</a></div>
 
     <script>
         // List of names and their links
