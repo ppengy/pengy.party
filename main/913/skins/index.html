@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>913 Skin Hub</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+        }
+
+        header {
+            font-family: "Pirata One", Roboto, Arial;
+            width: 100%;
+            background-color: #111;
+            padding: 1rem 2rem;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .skin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        .skin-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+            transition: box-shadow 0.2s;
+        }
+
+        .skin-card:hover {
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+        }
+
+        .skin-card img {
+            width: 100%;
+
+            display: block;
+            transition: opacity 0.3s;
+        }
+
+        .skin-card h3 {
+            margin: 0.5rem 0;
+        }
+
+        .skin-card p {
+            margin: 0.2rem 0 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .skin-card a {
+            display: inline-block;
+            margin-bottom: 0.5rem;
+            padding: 0.3rem 0.8rem;
+            background-color: #ff66aa;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .skin-card a:hover {
+            background-color: #ff4499;
+        }
+
+        /* Arrow buttons for image switch */
+        .arrow-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            padding: 0.2rem 0.5rem;
+            cursor: pointer;
+            border-radius: 3px;
+            user-select: none;
+        }
+
+        .arrow-left {
+            left: 5px;
+        }
+
+        .arrow-right {
+            right: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        footer a:link,
+        footer a:visited {
+            color: whitesmoke;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: red;
+            transition: color 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>913/skins</header>
+
+    <div class="skin-grid" id="skin-grid"></div>
+
+    <footer><a href="/913">Main Page</a></footer>
+
+    <script>
+        // Skin data with multiple images
+        const skins = [
+            {
+                name: "pengymathi",
+                author: "ppengy",
+                images: [
+                    "img/ppengymathi/1.jpg",
+                    "img/ppengymathi/2.jpg", "img/ppengymathi/3.jpg",
+                ],
+                download: "https://www.mediafire.com/file/xgtvhxwtgso4pv6/ppengymathi.osk/file"
+            },
+            {
+                name: "- cyber pastel -",
+                author: "lexy",
+                images: [
+                    "img/cyberpastel/1.jpg",
+                    "img/cyberpastel/2.jpg", "img/cyberpastel/3.jpg"
+                ],
+                download: "https://www.mediafire.com/file/htifino3lq7k8dn/-_cyber_pastel_-.osk/file"
+            },
+            {
+                name: "beatiful ah birds",
+                author: "placeholder",
+                uploader: "placegolder",
+                images: [
+                    "https://i.redd.it/3esvmkuot5s11.jpg",
+                    "https://external-preview.redd.it/pmddCcDTF4zXqHar5iTaS2xJr4YttJ9RR9FzAEI9aZk.jpg?width=1080&crop=smart&auto=webp&s=a1aa68db73fbd6f826ba83345bf90e5ad922e2db"
+                ],
+                download: "#"
+            }
+        ];
+
+        const skinGrid = document.getElementById("skin-grid");
+
+        skins.forEach(skin => {
+            const card = document.createElement("div");
+            card.className = "skin-card";
+
+            // Image container with arrows
+            const imgContainer = document.createElement("div");
+            imgContainer.style.position = "relative";
+
+            const imgEl = document.createElement("img");
+            imgEl.src = skin.images[0];
+            imgEl.dataset.index = 0;
+            imgContainer.appendChild(imgEl);
+
+            // Left arrow
+            const leftBtn = document.createElement("button");
+            leftBtn.className = "arrow-btn arrow-left";
+            leftBtn.innerText = "◀";
+            leftBtn.onclick = () => {
+                let current = parseInt(imgEl.dataset.index);
+                current = (current - 1 + skin.images.length) % skin.images.length;
+                imgEl.style.opacity = 0;
+                setTimeout(() => {
+                    imgEl.src = skin.images[current];
+                    imgEl.dataset.index = current;
+                    imgEl.style.opacity = 1;
+                }, 150);
+            };
+            imgContainer.appendChild(leftBtn);
+
+            // Right arrow
+            const rightBtn = document.createElement("button");
+            rightBtn.className = "arrow-btn arrow-right";
+            rightBtn.innerText = "▶";
+            rightBtn.onclick = () => {
+                let current = parseInt(imgEl.dataset.index);
+                current = (current + 1) % skin.images.length;
+                imgEl.style.opacity = 0;
+                setTimeout(() => {
+                    imgEl.src = skin.images[current];
+                    imgEl.dataset.index = current;
+                    imgEl.style.opacity = 1;
+                }, 150);
+            };
+            imgContainer.appendChild(rightBtn);
+
+            card.appendChild(imgContainer);
+
+            // Info container
+            const info = document.createElement("div");
+
+            const title = document.createElement("h3");
+            title.textContent = skin.name;
+            info.appendChild(title);
+
+            const author = document.createElement("p");
+            author.textContent = `by ${skin.author}`;
+            info.appendChild(author);
+
+            if (skin.uploader) {
+                const uploader = document.createElement("p");
+                uploader.textContent = `Uploaded by: ${skin.uploader}`;
+                info.appendChild(uploader);
+            }
+
+            const dl = document.createElement("a");
+            dl.href = skin.download;
+            dl.target = "_blank";
+            dl.textContent = "Download";
+            info.appendChild(dl);
+
+            // Append info section
+            card.appendChild(info);
+
+            skinGrid.appendChild(card);
+        });
+
+    </script>
+
+</body>
+
+</html>
