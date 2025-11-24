@@ -30,7 +30,7 @@
     "tiktok": "",
     "opgg": "",
     "twitch": "",
-    "custom_img": ""
+    "custom_img": "../data/img/berry.jpg"
   },
   {
     "name": "chuggle",
@@ -199,4 +199,5 @@
   }
 
 ]
+
 
