@@ -26,10 +26,10 @@
     "link": "https://osu.ppy.sh/users/14222865",
     "osu_id": 14222865,
     "X": "https://x.com/berrylawl",
-    "youtube": "",
+    "youtube": "https://www.youtube.com/@konacore",
     "tiktok": "",
     "opgg": "",
-    "twitch": "",
+    "twitch": "https://www.twitch.tv/berrylawl",
     "custom_img": "../data/img/berry.jpg"
   },
   {
@@ -199,5 +199,6 @@
   }
 
 ]
+
 
 
