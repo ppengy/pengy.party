@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  animation: fadeIn 1.5s ease-out forwards;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+header {
+  font-family: "Pirata One", Roboto, Arial;
+  width: 100%;
+  background-color: #111;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+a:link,
+a:visited {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  transition: color 0.3s;
+}
+.skin-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.skin-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  transition: box-shadow 0.2s;
+}
+
+.skin-card:hover {
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+}
+
+.skin-card img {
+  width: 100%;
+
+  display: block;
+  transition: opacity 0.3s;
+}
+
+.skin-card h3 {
+  margin: 0.5rem 0;
+}
+
+.skin-card p {
+  margin: 0.2rem 0 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.skin-card a {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  background-color: #ff66aa;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.skin-card a:hover {
+  background-color: #ff4499;
+}
+
+/* Arrow buttons for image switch */
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  border-radius: 3px;
+  user-select: none;
+}
+
+.arrow-left {
+  left: 5px;
+}
+
+.arrow-right {
+  right: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+footer a:link,
+footer a:visited {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: red;
+  transition: color 0.3s;
+}
+
+.footnote {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  color: #888;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.footnote a:link,
+.footnote a:visited {
+  color: #888;
+  text-decoration: none;
+}
+
+.footnote a:hover {
+  color: red;
+  transition: color 0.3s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

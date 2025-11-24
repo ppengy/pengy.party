@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+html,
+body {
+  height: 100%;
+  background-color: black;
+  color: pink;
+}
+
+body {
+  font-family: Roboto, Arial;
+  animation: fadeIn 1.5s ease-out forwards;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a:link,
+a:visited {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  transition: color 0.3s;
+}
+
+.banner {
+  width: 100%;
+  height: 20rem;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 10vh;
+  box-shadow: inset 0 2px 16px 12px rgba(0, 0, 0, 0.55);
+}
+
+.banner h1 a {
+  font-family: "Pirata One", Roboto, Arial;
+  font-size: 7rem;
+  color: inherit;
+  text-decoration: none;
+  mix-blend-mode: difference;
+  transition: color 0.3s;
+}
+
+.banner h1 a:hover {
+  color: red;
+  mix-blend-mode: normal;
+  text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px,
+    rgb(0, 0, 0) 1.0806px 1.68294px 0px, rgb(0, 0, 0) 0.141474px 1.99499px 0px,
+    rgb(0, 0, 0) -0.832294px 1.81859px 0px,
+    rgb(0, 0, 0) -1.60229px 1.19694px 0px, rgb(0, 0, 0) -1.97999px 0.28224px 0px,
+    rgb(0, 0, 0) -1.87291px -0.701566px 0px,
+    rgb(0, 0, 0) -1.30729px -1.51361px 0px,
+    rgb(0, 0, 0) -0.421592px -1.95506px 0px,
+    rgb(0, 0, 0) 0.567324px -1.91785px 0px,
+    rgb(0, 0, 0) 1.41734px -1.41108px 0px,
+    rgb(0, 0, 0) 1.92034px -0.558831px 0px;
+}
+
+#credits-container a {
+  font-family: "Pirata One", Roboto, Arial;
+  font-size: 1rem;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: inherit;
+  text-decoration: none;
+  mix-blend-mode: difference;
+  transition: color 0.3s;
+}
+
+#credits-container a:hover {
+  color: red;
+  mix-blend-mode: normal;
+  text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px,
+    rgb(0, 0, 0) 1.0806px 1.68294px 0px, rgb(0, 0, 0) 0.141474px 1.99499px 0px,
+    rgb(0, 0, 0) -0.832294px 1.81859px 0px,
+    rgb(0, 0, 0) -1.60229px 1.19694px 0px, rgb(0, 0, 0) -1.97999px 0.28224px 0px,
+    rgb(0, 0, 0) -1.87291px -0.701566px 0px,
+    rgb(0, 0, 0) -1.30729px -1.51361px 0px,
+    rgb(0, 0, 0) -0.421592px -1.95506px 0px,
+    rgb(0, 0, 0) 0.567324px -1.91785px 0px,
+    rgb(0, 0, 0) 1.41734px -1.41108px 0px,
+    rgb(0, 0, 0) 1.92034px -0.558831px 0px;
+}
+#skins-page {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  color: inherit;
+}
+
+#skins-page a {
+  font-family: "Pirata One", Roboto, Arial;
+  font-size: 3rem;
+  color: inherit;
+  mix-blend-mode: difference;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#skins-page a:hover {
+  color: red;
+  mix-blend-mode: normal;
+  text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px,
+    rgb(0, 0, 0) 1.0806px 1.68294px 0px, rgb(0, 0, 0) 0.141474px 1.99499px 0px,
+    rgb(0, 0, 0) -0.832294px 1.81859px 0px,
+    rgb(0, 0, 0) -1.60229px 1.19694px 0px, rgb(0, 0, 0) -1.97999px 0.28224px 0px,
+    rgb(0, 0, 0) -1.87291px -0.701566px 0px,
+    rgb(0, 0, 0) -1.30729px -1.51361px 0px,
+    rgb(0, 0, 0) -0.421592px -1.95506px 0px,
+    rgb(0, 0, 0) 0.567324px -1.91785px 0px,
+    rgb(0, 0, 0) 1.41734px -1.41108px 0px,
+    rgb(0, 0, 0) 1.92034px -0.558831px 0px;
+}
+
+.flipped {
+  display: inline-block;
+  transform: scaleX(-1);
+}
+
+p {
+  margin: 0.2rem 0;
+  text-align: center;
+}
+#subtitle {
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* .box {
+  padding: 10px 15px;
+  margin: 0 auto;
+  cursor: pointer;
+  user-select: none;
+  max-width: 150px;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+}
+
+.box .arrow {
+  display: inline-block;
+  margin-right: 5px;
+  transition: transform 0.3s;
+}
+
+.box.active .arrow {
+  transform: rotate(90deg);
+}
+
+.box .names {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  line-height: 1.5;
+}
+
+.box.active .names {
+  max-height: 1000px;
+} */
+
+.footnote {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 9999;
+  color: #888;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.footnote a:link,
+.footnote a:visited {
+  color: #888;
+  text-decoration: none;
+}
+
+.footnote a:hover {
+  color: red;
+  transition: color 0.3s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

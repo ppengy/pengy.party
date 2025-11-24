@@ -1,302 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>913</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Pirata+One&display=swap");
 
-      body {
-        font-family: Roboto, Arial;
-        animation: fadeIn 1.5s ease-out forwards;
-        margin: 0;
-        background-color: black;
-        color: whitesmoke;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
+<head>
+  <title>913</title>
+  <link rel="icon" href="data//svg/favicon.svg" sizes="any" type="image/svg+xml">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="script.js"></script>
+</head>
 
-      a:link,
-      a:visited {
-        color: whitesmoke;
-        text-decoration: none;
-      }
-
-      a:hover {
-        color: red;
-        transition: color 0.3s;
-      }
-
-      .banner {
-        width: 100%;
-        height: 20rem;
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        margin-top: 10%;
-        box-shadow: inset 0 2px 16px 12px rgba(0, 0, 0, 0.55);
-      }
-
-      .banner h1 a {
-        font-family: "Pirata One", Roboto, Arial;
-        font-size: 7rem;
-        color: inherit;
-        text-decoration: none;
-        mix-blend-mode: difference;
-        transition: color 0.3s;
-      }
-
-      .banner h1 a:hover {
-        color: red;
-        mix-blend-mode: normal;
-      }
-
-      #credits-container a {
-        font-family: "Pirata One", Roboto, Arial;
-        font-size: 1rem;
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        color: inherit;
-        text-decoration: none;
-        mix-blend-mode: difference;
-        transition: color 0.3s;
-      }
-
-      #credits-container a:hover {
-        color: red;
-        mix-blend-mode: normal;
-      }
-
-      #skins-page a {
-        font-family: "Pirata One", Roboto, Arial;
-        font-size: 3rem;
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        color: inherit;
-        text-decoration: none;
-        mix-blend-mode: difference;
-        transition: color 0.3s;
-      }
-
-      #skins-page a:hover {
-        color: red;
-        mix-blend-mode: normal;
-      }
-      .flipped {
-        display: inline-block;
-        transform: scaleX(-1);
-      }
-
-      p {
-        margin: 0.2rem 0;
-        text-align: center;
-      }
-
-      .box {
-        padding: 10px 15px;
-        margin: 0 auto;
-        cursor: pointer;
-        user-select: none;
-        max-width: 150px;
-        text-align: left;
-        background-color: rgba(255, 255, 255, 0.05);
-        border-radius: 5px;
-      }
-
-      .box .arrow {
-        display: inline-block;
-        margin-right: 5px;
-        transition: transform 0.3s;
-      }
-
-      .box.active .arrow {
-        transform: rotate(90deg);
-      }
-
-      .box .names {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.5s ease;
-        line-height: 1.5;
-      }
-
-      .box.active .names {
-        max-height: 1000px;
-      }
-
-      .footnote {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        color: #888;
-        font-size: 0.85rem;
-        opacity: 0.8;
-      }
-
-      .footnote a:link,
-      .footnote a:visited {
-        color: #888;
-        text-decoration: none;
-      }
-
-      .footnote a:hover {
-        color: red;
-        transition: color 0.3s;
-      }
-      @keyframes fadeIn {
-        0% {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- Banner with H1 -->
-    <div class="banner" id="banner">
-      <h1><a href="https://osu.ppy.sh/teams/32869" target="_blank">913</a></h1>
-      <p id="credits-container"></p>
-      <p id="skins-page">
-        <a href="skins"><br />[skins]</a>
-      </p>
-    </div>
-
-    <!-- Subtitle -->
-    <p style="font-size: 2rem; text-align: center">
-      ˚₊‧꒰ა ♡ <span class="flipped">ა</span>꒱‧₊˚
+<body>
+  <!-- Banner with links -->
+  <div class="banner" id="banner">
+    <h1><a href="https://osu.ppy.sh/teams/32869" target="_blank">913</a></h1>
+    <p id="credits-container"></p>
+    <p id="skins-page">
+      <a href="skins">[skins]</a>
+      <a href="members">[members]</a>
     </p>
-    <p>The world is full of unfortunate people…</p>
+  </div>
 
-    <!-- Flashing name -->
-    <p id="name-flasher">:3&nbsp;</p>
-    <!-- BBCode-style dropdown box -->
-    <div class="box" onclick="this.classList.toggle('active')">
-      <span class="arrow">▸</span>
-      <div class="names" id="names-container"></div>
-    </div>
-    <div class="footnote">
-      made by <a href="https://pengy.party/">ppengy</a>, inspired by
-      <a href="https://ego.baby">ego.baby</a>
-    </div>
+  <!-- Subtitle -->
+  <p id="subtitle">
+    ˚₊‧꒰ა ♡ <span class="flipped">ა</span>꒱‧₊˚
+  </p>
+  <p>The world is full of unfortunate people…</p>
 
-    <script>
-      // List of names and their links
-      const names = [
-        { name: "alfie", link: "https://osu.ppy.sh/users/19883639" },
-        { name: "atlas", link: "https://osu.ppy.sh/users/9074780" },
-        { name: "berry", link: "https://osu.ppy.sh/users/14222865" },
-        { name: "chuggle", link: "https://osu.ppy.sh/users/31117245" },
-        { name: "dfking", link: "https://osu.ppy.sh/users/29424286" },
-        { name: "east", link: "https://osu.ppy.sh/users/13169726" },
-        { name: "eila", link: "https://osu.ppy.sh/users/BANNED" },
-        { name: "enthrew", link: "https://osu.ppy.sh/users/19540896" },
-        { name: "fear", link: "https://osu.ppy.sh/users/13315922" },
-        { name: "gary", link: "https://osu.ppy.sh/users/15103358" },
-        { name: "hinder", link: "https://osu.ppy.sh/users/8267599" },
-        { name: "lastnoobwarrior", link: "https://osu.ppy.sh/users/17748214" },
-        { name: "lexy", link: "https://osu.ppy.sh/users/20240988" },
-        { name: "lu", link: "https://osu.ppy.sh/users/BANNED" },
-        { name: "nase", link: "https://osu.ppy.sh/users/15428284" },
-        { name: "pengy", link: "https://osu.ppy.sh/users/8832233" },
-        { name: "ricky", link: "https://osu.ppy.sh/users/17649390" },
-        { name: "sylriu", link: "https://osu.ppy.sh/users/12637617" },
-      ];
+  <!-- Flashing name -->
+  <p id="name-flasher">:3&nbsp;</p>
 
-      // Flashing name
-      const nameFlasherDomEl = document.getElementById("name-flasher");
-      let index = 0;
-      function loop() {
-        nameFlasherDomEl.innerText = names[index].name;
-        index = (index + 1) % names.length;
-      }
-      setInterval(loop, 550);
+  <!-- BBCode-style dropdown box (disabled)-->
+  <!-- <div class="box" onclick="this.classList.toggle('active')">
+    <span class="arrow">▸</span>
+    <div class="names" id="names-container"></div>
+  </div> -->
 
-      // Populate dropdown links dynamically
-      const namesContainer = document.getElementById("names-container");
-      names.forEach((obj) => {
-        const a = document.createElement("a");
-        a.href = obj.link;
-        a.target = "_blank";
-        a.innerText = obj.name;
-        namesContainer.appendChild(a);
-        namesContainer.appendChild(document.createElement("br"));
-      });
-
-      // Random banner image
-      const images = [
-        {
-          credit: "https://x.com/noqieqt/status/1992235947648602339",
-          link: "https://pbs.twimg.com/media/G6XYCNHbYAMbqQ2?format=jpg&name=large",
-        },
-        {
-          credit: "https://x.com/noqieqt/status/1967223620645867603",
-          link: "https://pbs.twimg.com/media/G0z7dGhacAA5Iou?format=jpg&name=large",
-          custom_pos: "0 24%",
-        },
-        {
-          credit: "https://x.com/noqieqt/status/1931693015359541292",
-          link: "https://pbs.twimg.com/media/Gs7Ajpea4AAgmCl?format=jpg&name=large",
-        },
-        {
-          credit: "https://x.com/noqieqt/status/1949107475489378463",
-          link: "https://pbs.twimg.com/media/Gwye6slbEAAF-z_?format=jpg&name=large",
-          custom_pos: "0 33%",
-        },
-        {
-          credit: "https://x.com/noqieqt/status/1969036126552793098",
-          link: "https://pbs.twimg.com/media/G1Nr6tXakAAVnWI?format=jpg&name=large",
-          custom_pos: "0 30%",
-        },
-                {
-          credit: "https://www.pixiv.net/en/artworks/39942407",
-          link: "skins/img/home_banner/39942407_p0.jpg",
-          custom_pos: "0 30%",
-        }, {
-          credit: "https://x.com/nthercyte/status/1991891855336698211/",
-          link: "https://pbs.twimg.com/media/G6SdoZBXAAAOjV6?format=jpg&name=large",
-		  custom_pos: "0 27%",
-        },
-		{
-          credit: "https://x.com/RookieTheCat/status/1990649122286944346",
-          link: "https://pbs.twimg.com/media/G6A0xfjbcAAiGnY?format=jpg&name=large",
-          custom_pos: "0 45%",
-        },
-				{
-          credit: "https://x.com/divinefracture/status/1929314264872816962",
-          link: "https://pbs.twimg.com/media/GsYkDhkXIAAcMiw?format=jpg&name=large",
-
-        },		{
-          credit: "https://www.pinterest.com/pin/21532904464315717/",
-          link: "https://i.pinimg.com/1200x/c3/60/0b/c3600b303fb92f4b8bc4e31d692dd3ae.jpg",
-          custom_pos: "0 33%",
-        },
-      ];
-     const randomIndex = Math.floor(Math.random() * images.length);
-      //randomIndex = 5;
-      const chosenImage = images[randomIndex];
-      const banner = document.getElementById("banner");
-      banner.style.backgroundImage = `url('${chosenImage.link}')`;
-      banner.style.backgroundPosition = chosenImage.custom_pos || "center";
-      // Add credit link
-      const creditContainer = document.getElementById("credits-container");
-      const creditLink = document.createElement("a");
-      creditLink.href = chosenImage.credit;
-      creditLink.target = "_blank";
-      creditLink.innerText = "Image credit";
-      creditContainer.appendChild(creditLink);
-    </script>
-  </body>
+  <!-- Footnote -->
+  <div class="footnote">
+    made by <a href="https://pengy.party/" target="_blank">ppengy</a>, inspired by
+    <a href="https://ego.baby" target="_blank">ego.baby</a> | <a href="./members">members</a> | <a href="./skins">skins</a> | <a href="/913">home</a>
+  </div>
+</body>
 </html>
