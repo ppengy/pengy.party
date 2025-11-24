@@ -140,7 +140,7 @@
     "tiktok": "",
     "opgg": "",
     "twitch": "https://www.twitch.tv/mikyu333",
-    "custom_img": ""
+    "custom_img": "../data/img/lexy.jpg"
   },
   {
     "name": "lu",
@@ -197,4 +197,5 @@
     "twitch": "https://twitch.tv/sylriu",
     "custom_img": "../data/img/sylriu.jpg"
   }
+
 ]
