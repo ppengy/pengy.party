@@ -44,6 +44,17 @@
     "custom_img": ""
   },
   {
+    "name": "chris",
+    "link": "https://osu.ppy.sh/users/17748214",
+    "osu_id": 17748214,
+    "X": "",
+    "youtube": "",
+    "tiktok": "",
+    "opgg": "",
+    "twitch": "",
+    "custom_img": ""
+  },
+  {
     "name": "dfking",
     "link": "https://osu.ppy.sh/users/29424286",
     "osu_id": 29424286,
@@ -121,10 +132,10 @@
     "custom_img": ""
   },
   {
-    "name": "lastnoobwarrior",
-    "link": "https://osu.ppy.sh/users/17748214",
-    "osu_id": 17748214,
-    "X": "",
+    "name": "kattny",
+    "link": "https://osu.ppy.sh/users/13597527",
+    "osu_id": 13597527,
+    "X": "https://x.com/C0C0KAT",
     "youtube": "",
     "tiktok": "",
     "opgg": "",
@@ -199,6 +210,7 @@
   }
 
 ]
+
 
 
 
