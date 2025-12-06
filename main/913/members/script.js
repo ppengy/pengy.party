@@ -63,13 +63,21 @@ fetch("../data/members.json")
                 tl.style.backgroundColor = "purple";
                 info.appendChild(tl);
             }
-            if (member.opgg != "") {
+            if (member.tiktok != "") {
                 const tl = document.createElement("a");
-                tl.href = member.opgg;
+                tl.href = member.twitch;
                 tl.target = "_blank";
-                tl.textContent = "opgg";
-                tl.style.backgroundColor = "#5383e8";
+                tl.textContent = "Tiktok";
+                tl.style.backgroundColor = "black";
                 info.appendChild(tl);
+            }
+            if (member.opgg != "") {
+                const ol = document.createElement("a");
+                ol.href = member.opgg;
+                ol.target = "_blank";
+                ol.textContent = "opgg";
+                ol.style.backgroundColor = "#5383e8";
+                info.appendChild(ol);
             }
 
             memberGrid.appendChild(card);
