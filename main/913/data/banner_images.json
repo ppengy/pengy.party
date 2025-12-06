@@ -1,30 +1,25 @@
 [
   {
-    "credit": "https://x.com/noqieqt/status/1992235947648602339",
-    "link": "https://pbs.twimg.com/media/G6XYCNHbYAMbqQ2?format=jpg&name=large"
+    "credit": "https://x.com/noqieqt/",
+    "link": "data/img/banner/G0z7dGhacAA4qKc.png",
+      "custom_pos": "0 24%"
   },
   {
-    "credit": "https://x.com/noqieqt/status/1967223620645867603",
-    "link": "https://pbs.twimg.com/media/G0z7dGhacAA5Iou?format=jpg&name=large",
-    "custom_pos": "0 24%"
+    "credit": "https://x.com/noqieqt/G1Nr6tXakAAicvq.png",
+    "link": "data/img/banner/G1Nr6tXakAAicvq.png"
   },
   {
-    "credit": "https://x.com/noqieqt/status/1931693015359541292",
-    "link": "https://pbs.twimg.com/media/Gs7Ajpea4AAgmCl?format=jpg&name=large"
+    "credit": "https://x.com/noqieqt/",
+    "link": "data/img/banner/Gs7AjpcbIAAL5b4.png",
+    "custom_pos": "0 60%"
   },
   {
-    "credit": "https://x.com/noqieqt/status/1949107475489378463",
-    "link": "https://pbs.twimg.com/media/Gwye6slbEAAF-z_?format=jpg&name=large",
-    "custom_pos": "0 33%"
-  },
-  {
-    "credit": "https://x.com/noqieqt/status/1969036126552793098",
-    "link": "https://pbs.twimg.com/media/G1Nr6tXakAAVnWI?format=jpg&name=large",
-    "custom_pos": "0 30%"
+    "credit": "https://x.com/noqieqt/",
+    "link": "data/img/banner/Gs7Ajpea4AAmNvu.png"
   },
   {
     "credit": "https://www.pixiv.net/en/artworks/39942407",
-    "link": "data/img/39942407_p0.jpg",
+    "link": "data/img/banner/39942407_p0.jpg",
     "custom_pos": "0 30%"
   },
   {
