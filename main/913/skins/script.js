@@ -24,7 +24,7 @@ const skins = [
     },
     {
         name: "Urabe",
-        author: "Dfking",
+        author: "dfking",
         images: [
             "data/img/urabe/1.jpg", 
             "data/img/urabe/2.jpg", 
@@ -34,14 +34,14 @@ const skins = [
             "https://www.mediafire.com/file/ytn56ugxvm18c7x/Urabe.osk/file",
     },
     {
-        name: "beatiful ah birds",
-        author: "placeholder",
-        uploader: "placegolder",
+        name: "yaong",
+        author: "lu",
         images: [
-            "https://i.redd.it/3esvmkuot5s11.jpg",
-            "https://external-preview.redd.it/pmddCcDTF4zXqHar5iTaS2xJr4YttJ9RR9FzAEI9aZk.jpg?width=1080&crop=smart&auto=webp&s=a1aa68db73fbd6f826ba83345bf90e5ad922e2db",
+            "data/img/yaong/1.png", 
+            "data/img/yaong/2.jpg", 
+            "data/img/yaong/3.jpg"
         ],
-        download: "#",
+        download: "https://www.mediafire.com/file/hs7idw81w6gb8rj/yaong.osk/file",
     }
 ];
 
