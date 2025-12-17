@@ -96,7 +96,7 @@
     "tiktok": "",
     "opgg": "",
     "twitch": "",
-    "custom_img": "../data/img/enthrew.jpeg"
+    "custom_img": ""
   },
   {
     "name": "fear",
@@ -140,6 +140,17 @@
     "tiktok": "",
     "opgg": "",
     "twitch": "",
+    "custom_img": ""
+  },  
+  {
+    "name": "kendall",
+    "link": "https://osu.ppy.sh/users/11962818",
+    "osu_id": 11962818,
+    "X": "https://x.com/horridtour",
+    "youtube": "https://www.youtube.com/@rinrar/",
+    "tiktok": "",
+    "opgg": "",
+    "twitch": "https://www.twitch.tv/horridtour",
     "custom_img": ""
   },
   {

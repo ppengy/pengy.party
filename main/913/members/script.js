@@ -65,7 +65,7 @@ fetch("../data/members.json")
             }
             if (member.tiktok != "") {
                 const tl = document.createElement("a");
-                tl.href = member.twitch;
+                tl.href = member.tiktok;
                 tl.target = "_blank";
                 tl.textContent = "Tiktok";
                 tl.style.backgroundColor = "black";
