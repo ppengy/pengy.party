@@ -33,6 +33,17 @@
     "custom_img": ""
   },
   {
+    "name": "birria",
+    "link": "https://osu.ppy.sh/users/14531430",
+    "osu_id": 14531430,
+    "X": "",
+    "youtube": "",
+    "tiktok": "",
+    "opgg": "",
+    "twitch": "",
+    "custom_img": ""
+  },
+  {
     "name": "chuggle",
     "link": "https://osu.ppy.sh/users/31117245",
     "osu_id": 31117245,
@@ -151,6 +162,17 @@
     "tiktok": "",
     "opgg": "",
     "twitch": "https://www.twitch.tv/horridtour",
+    "custom_img": ""
+  },  
+  {
+    "name": "konzid",
+    "link": "https://osu.ppy.sh/users/20549600",
+    "osu_id": 20549600,
+    "X": "https://x.com/Konzidosu",
+    "youtube": "",
+    "tiktok": "",
+    "opgg": "",
+    "twitch": "",
     "custom_img": ""
   },
   {

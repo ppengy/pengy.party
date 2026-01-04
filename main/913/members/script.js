@@ -51,7 +51,7 @@ fetch("../data/members.json")
                 const yl = document.createElement("a");
                 yl.href = member.youtube;
                 yl.target = "_blank";
-                yl.textContent = "▶";
+                yl.textContent = "Youtube";
                 yl.style.backgroundColor = "red";
                 info.appendChild(yl);
             }
