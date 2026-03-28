@@ -1,0 +1,201 @@
+.nunito-font {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+}
+
+/* Rainbow text (credit to https://stackoverflow.com/a/71909116) */
+h1 {
+    display: inline-block;
+    text-align: center;
+    font-size: min(10vh, 32px);
+    font-family: "Nunito", sans-serif;
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    animation: rainbow-animation 140s linear infinite;
+    margin: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    height: 8px;
+    border-radius: 30px;
+    width: 100%;
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
+    animation: rainbow-animation 140s linear infinite;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    background-color: #124951cb;
+    height: 100%;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.5s ease;
+    animation: fadein 3s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.link-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin: 3% 100px 0;
+    height: 100%;
+    padding: 1dvh 10dvw;
+    /* background: rgba(255, 255, 255, 0.34); */
+    /* border-radius: 16px; */
+    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+    /* backdrop-filter: blur(1px); */
+    /* -webkit-backdrop-filter: blur(4px); */
+    /* border: 1px solid rgba(255, 255, 255, 1); */
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    padding: 3em;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-link img {
+    /* mix-blend-mode: multiply; */
+    border-radius: 15px;
+    background: white;
+    /* box-shadow: 5px 5px 27px #344041, -5px -5px 27px #d0feff; */
+    cursor: pointer;
+    margin: 0 auto 1dvw;
+    display: block;
+    max-width: 90px;
+    min-height: 90px;
+    transition: transform 0.5s ease;
+}
+
+.social-link img:hover {
+    transform: translateY(-10px) scale(1.15);
+}
+
+a {
+    text-decoration: none;
+}
+
+.platform-name {
+    background: #1c1f2b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    width: 10dvw;
+    min-width: 50px;
+    margin: 10px auto 0;
+    height: 40px;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.platform-name::after,
+.platform-name::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    padding: 2px;
+    border-radius: 12px;
+    opacity: 0;
+    filter: blur(2px);
+    transition: opacity 0.8s ease-in-out;
+    animation: rainbow-animation 300s linear infinite;
+    animation-play-state: paused;
+}
+
+.platform-name:hover {
+    background: #2b3041;
+}
+
+.platform-name:hover::after,
+.platform-name:hover::before {
+    animation-play-state: running;
+    opacity: 1;
+}
+
+@keyframes rainbow-animation {
+    to { background-position: 4500vh; }
+}
+
+@media screen and (max-width: 500px) {
+    .link-container {
+        margin: 3em 0;
+        padding: 0;
+    }
+
+    .social-link {
+        padding: 3dvh 2dvw;
+    }
+
+    .social-link img {
+        width: 4em;
+    }
+
+    .platform-name {
+        width: 80px;
+    }
+}
+
+#penguin {
+    animation: ease-in 0.5s;
+    font-size: 200%;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    cursor: pointer;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#upload-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+#fileInput {
+  margin-bottom: 0.5em;
+}
+
+#status {
+  word-break: break-word;
+  max-width: 90%;
+  padding: 0.5em;
+  font-weight: bold;
+  color: #00ff90;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+}
