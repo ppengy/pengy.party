@@ -17,6 +17,7 @@ body {
 
 .socials {
   margin-top: 20px;
+
 }
 
 .socials a {
@@ -35,7 +36,8 @@ body {
 }
 
 .clanimg {
-  filter: invert(100%) grayscale(100%);  margin-bottom: -3px;
+  filter: invert(100%) grayscale(100%);
+  margin-bottom: -3px;
   width: 27px;
   text-decoration: none;
   transition: 0.2s;
@@ -56,6 +58,7 @@ h2 {
 .skins {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin-inline: 15%;
   margin-top: 30px
 }
@@ -65,7 +68,8 @@ h2 {
   flex-wrap: nowrap;
   flex-direction: column;
   justify-content: center;
-  align-items: center;  width: 50%;
+  align-items: center;
+  width: 50%;
   gap: 10px;
   padding-inline: 20px;
   box-sizing: border-box;
@@ -87,4 +91,14 @@ h2 {
 
 .download-link:hover {
   color: #1da1f2;
+}
+
+@media (max-width: 768px) {
+  .skins {
+    margin-inline: 0%;
+  }
+
+  .skin {
+    width: 80%;
+  }
 }
