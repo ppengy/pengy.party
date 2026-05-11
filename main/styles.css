@@ -7,7 +7,7 @@
 body {
   margin: 0;
   font-family: Nunito, sans-serif;
-  background: rgb(91, 130, 150);
+  background: rgb(17, 37, 89);
   color: white;
   display: flex;
   justify-content: center;
@@ -37,7 +37,7 @@ body {
 
 .clanimg {
   filter: invert(100%) grayscale(100%);
-  margin-bottom: -3px;
+  margin-bottom: -1px;
   width: 27px;
   text-decoration: none;
   transition: 0.2s;
